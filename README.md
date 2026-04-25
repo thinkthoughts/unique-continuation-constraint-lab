@@ -2,9 +2,10 @@
 
 # unique-continuation-constraint-lab
 
-Constraint-based visualization and notebooks for unique continuation in Schrödinger equations.
+Constraint-based visualization and notebooks for unique continuation in Schrödinger equations.  
+Reproducible figures and notebooks for a classical unique continuation argument.
 
-**same math · lifted clarity**
+*same math · lifted clarity*
 
 ---
 
