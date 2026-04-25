@@ -4,26 +4,31 @@ We consider solutions to the linear Schrödinger equation
 \[
 i\partial_t u = -\Delta u + V(x)u,
 \]
-where \(u : \mathbb{R}^n \times \mathbb{R} \to \mathbb{C}\) and \(V\) is a suitable potential.
-
-A representative unique continuation result (after Escauriaza–Kenig–Ponce–Vega) has the following form.
+where \(u : \mathbb{R}^n \times \mathbb{R} \to \mathbb{C}\).
 
 \begin{theorem}[Two-time Gaussian decay implies triviality]
-Let \(u\) be a sufficiently regular solution to the Schrödinger equation above.
+Let \(u\) be a sufficiently regular solution.
 Assume that for two distinct times \(t_1 \neq t_2\),
 \[
 |u(x,t_1)| \le C e^{-a|x|^2}, \quad
-|u(x,t_2)| \le C e^{-a|x|^2},
+|u(x,t_2)| \le C e^{-a|x|^2}.
 \]
-for some constants \(C > 0\) and sufficiently large \(a > 0\).
 
-Then, under appropriate conditions on \(V\),
+Then, under suitable assumptions,
 \[
 u(x,t) \equiv 0.
 \]
 \end{theorem}
 
 \begin{remark}
-The precise hypotheses depend on the dimension, regularity class, and assumptions on the potential \(V\).
-We do not attempt to optimize constants or assumptions here, as the focus is structural.
+Precise hypotheses depend on the model, dimension, and potential \(V\).
 \end{remark}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{figures/step1_two_time_decay_code.png}
+\caption{
+Step 1. Two-time decay: the solution is small at two distinct times \(t_1, t_2\),
+forming a paired constraint input.
+}
+\end{figure}
