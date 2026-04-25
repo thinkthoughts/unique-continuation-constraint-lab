@@ -1,13 +1,15 @@
-# src/plotting.py
+"""Shared plotting helpers for unique-continuation-constraint-lab."""
+
+from __future__ import annotations
+
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
-from pathlib import Path
 
-
-# --- global style ---
 
 def set_style():
+    """Apply shared Matplotlib styling."""
     plt.rcParams.update({
         "figure.figsize": (10, 4.8),
         "font.size": 12,
@@ -18,93 +20,55 @@ def set_style():
     })
 
 
-def save(fig, path, dpi=180):
+def ensure_fig_dir(path="figures"):
+    """Return a figure directory, supporting repo-root and notebooks/ execution."""
+    candidates = [Path("../figures"), Path(path)]
+    for candidate in candidates:
+        if candidate.exists():
+            candidate.mkdir(parents=True, exist_ok=True)
+            return candidate
+    candidates[0].mkdir(parents=True, exist_ok=True)
+    return candidates[0]
+
+
+def save(fig, path, dpi: int = 180):
+    """Save a figure with consistent settings."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path, dpi=dpi, bbox_inches="tight")
 
 
-# --- helpers ---
-
-def normalize(y):
-    m = np.max(np.abs(y))
-    return y if m == 0 else y / m
-
-
-# --- common plots used in repo ---
-
-def plot_profiles(x, profiles, labels, title=None):
-    """
-    profiles: list of arrays
-    labels: list of strings
-    """
-    fig, ax = plt.subplots()
-
-    for u, lab in zip(profiles, labels):
-        ax.plot(x, normalize(u), linewidth=2.4, label=lab)
-
-    ax.set_xlabel("space coordinate x")
-    ax.set_ylabel("normalized amplitude")
-
-    if title:
-        ax.set_title(title, fontsize=16)
-
-    ax.legend(frameon=True)
-    plt.tight_layout()
-    return fig, ax
+def add_caption(ax, text, y=-0.22):
+    """Add a consistent caption box below an axis."""
+    ax.text(
+        0.02, y, text,
+        transform=ax.transAxes,
+        fontsize=11,
+        color="0.25",
+        bbox=dict(boxstyle="round,pad=0.45", fc="white", ec="0.75"),
+    )
 
 
-def plot_gradient_overlay(x, u, grad_u, title=None):
-    fig, ax = plt.subplots()
+def plot_alignment_bars(labels, scores, title, target=0.96):
+    """Plot local CGCS alignment bars."""
+    gate_45 = 1 / np.sqrt(2)
+    fig, ax = plt.subplots(figsize=(10, 4.8))
+    bars = ax.bar(labels, scores)
+    ax.axhline(target, linestyle="--", linewidth=2, label="max-CGCS target 0.96")
+    ax.axhline(gate_45, linestyle=":", linewidth=2, label=r"45° gate $1/\sqrt{1^2+1^2}$")
 
-    ax.plot(x, normalize(u), linewidth=2.5, label="profile")
-    ax.plot(x, normalize(np.abs(grad_u)), linestyle="--", linewidth=2.2, label="|gradient|")
+    for bar, score in zip(bars, scores):
+        ax.text(
+            bar.get_x() + bar.get_width() / 2,
+            score + 0.015,
+            f"{score:.3f}",
+            ha="center",
+            va="bottom",
+            fontsize=11,
+        )
 
-    ax.set_xlabel("x")
-    ax.set_ylabel("normalized value")
-
-    if title:
-        ax.set_title(title, fontsize=16)
-
-    ax.legend(frameon=True)
-    plt.tight_layout()
-    return fig, ax
-
-
-def plot_bar_comparison(labels, series, series_labels, title=None):
-    """
-    series: list of lists (values)
-    series_labels: names of each bar group
-    """
-    x = np.arange(len(labels))
-    width = 0.25
-
-    fig, ax = plt.subplots()
-
-    for i, vals in enumerate(series):
-        ax.bar(x + (i - (len(series)-1)/2) * width, vals, width=width, label=series_labels[i])
-
-    ax.set_xticks(x)
-    ax.set_xticklabels(labels)
-    ax.set_ylabel("normalized value")
-
-    if title:
-        ax.set_title(title, fontsize=16)
-
-    ax.legend(frameon=True)
-    plt.tight_layout()
-    return fig, ax
-
-
-def plot_log_bars(labels, values, title=None):
-    fig, ax = plt.subplots()
-
-    ax.bar(labels, values)
-    ax.set_yscale("log")
-    ax.set_ylabel("log scale")
-
-    if title:
-        ax.set_title(title, fontsize=16)
-
-    plt.tight_layout()
+    ax.set_ylim(0, 1.05)
+    ax.set_ylabel("local CGCS")
+    ax.set_title(title, fontsize=18, pad=14)
+    ax.legend(loc="lower right")
     return fig, ax
