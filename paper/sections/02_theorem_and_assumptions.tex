@@ -1,17 +1,29 @@
 \section{Theorem and assumptions}
 
-A simplified model is
+We consider solutions to the linear Schrödinger equation
 \[
-i\partial_t u = -\Delta u + V(x)u.
+i\partial_t u = -\Delta u + V(x)u,
 \]
+where \(u : \mathbb{R}^n \times \mathbb{R} \to \mathbb{C}\) and \(V\) is a suitable potential.
 
-A classical unique-continuation statement has the following form: if the solution satisfies sufficiently strong two-time decay,
+A representative unique continuation result (after Escauriaza–Kenig–Ponce–Vega) has the following form.
+
+\begin{theorem}[Two-time Gaussian decay implies triviality]
+Let \(u\) be a sufficiently regular solution to the Schrödinger equation above.
+Assume that for two distinct times \(t_1 \neq t_2\),
 \[
-|u(x,t_1)|, |u(x,t_2)| \le C e^{-a|x|^2},
+|u(x,t_1)| \le C e^{-a|x|^2}, \quad
+|u(x,t_2)| \le C e^{-a|x|^2},
 \]
-for \(a\) sufficiently large under appropriate hypotheses, then
+for some constants \(C > 0\) and sufficiently large \(a > 0\).
+
+Then, under appropriate conditions on \(V\),
 \[
 u(x,t) \equiv 0.
 \]
+\end{theorem}
 
-The exact hypotheses depend on the model, potential, coefficients, dimension, and function spaces.
+\begin{remark}
+The precise hypotheses depend on the dimension, regularity class, and assumptions on the potential \(V\).
+We do not attempt to optimize constants or assumptions here, as the focus is structural.
+\end{remark}
