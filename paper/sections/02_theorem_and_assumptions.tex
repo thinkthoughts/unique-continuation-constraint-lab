@@ -1,34 +1,19 @@
 \section{Theorem and assumptions}
 
-We consider solutions to the linear Schrödinger equation
+We consider
 \[
-i\partial_t u = -\Delta u + V(x)u,
-\]
-where \(u : \mathbb{R}^n \times \mathbb{R} \to \mathbb{C}\).
-
-\begin{theorem}[Two-time Gaussian decay implies triviality]
-Let \(u\) be a sufficiently regular solution.
-Assume that for two distinct times \(t_1 \neq t_2\),
-\[
-|u(x,t_1)| \le C e^{-a|x|^2}, \quad
-|u(x,t_2)| \le C e^{-a|x|^2}.
+i\partial_t u = -\Delta u + V(x)u.
 \]
 
-Then, under suitable assumptions,
-\[
-u(x,t) \equiv 0.
-\]
+\begin{theorem}
+If a solution exhibits sufficiently strong Gaussian decay at two distinct times,
+then \(u \equiv 0\).
 \end{theorem}
-
-\begin{remark}
-Precise hypotheses depend on the model, dimension, and potential \(V\).
-\end{remark}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\linewidth]{figures/step1_two_time_decay_code.png}
 \caption{
-Step 1. Two-time decay: the solution is small at two distinct times \(t_1, t_2\),
-forming a paired constraint input.
+Step 1. Two-time decay: the solution is small at two distinct times, forming a paired constraint input.
 }
 \end{figure}
