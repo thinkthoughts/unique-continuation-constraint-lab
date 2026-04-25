@@ -109,7 +109,7 @@ This repo includes a minimal CGCS translation layer:
 
 - **expand**: initial spread of structure  
 - **extend (step)**: continue one step  
-- **resist (collapse)**: survive constraint pressure  
+- **resist (collapse)**: continues under constraint pressure  
 
 These are interpretive aids only. Standard PDE language remains primary.
 
