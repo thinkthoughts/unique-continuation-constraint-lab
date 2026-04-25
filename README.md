@@ -1,3 +1,5 @@
+![banner](docs/banner.png)
+
 # unique-continuation-constraint-lab
 
 Constraint-based visualization and notebooks for unique continuation in Schrödinger equations.
@@ -6,66 +8,45 @@ Constraint-based visualization and notebooks for unique continuation in Schrödi
 
 ---
 
-## Start here
+## 🔗 Start here
 
-Web bridge note:
+- 🌐 **Web bridge note**  
+  https://cosineconstraint.app/colab/2026_04_24_schrodinger_unique_continuation_pipeline.html
 
-https://cosineconstraint.app/colab/2026_04_24_schrodinger_unique_continuation_pipeline.html
+- 📄 **Paper (PDF)**  
+  https://cosineconstraint.app/colab/papers/unique-continuation-constraint-lab/main.pdf
 
-This repo turns that after-seminar bridge into a reproducible lab structure:
+- 📓 **Notebooks (Colab)**  
+  - Notebook 01 — Decay + Carleman  
+    https://colab.research.google.com/github/thinkthoughts/unique-continuation-constraint-lab/blob/main/notebooks/01_decay_weight_visualization.ipynb  
+  - Notebook 02 — Hardy variation  
+    https://colab.research.google.com/github/thinkthoughts/unique-continuation-constraint-lab/blob/main/notebooks/02_hardy_gate_demo.ipynb  
+  - Notebook 03 — PDE-aligned contradiction  
+    https://colab.research.google.com/github/thinkthoughts/unique-continuation-constraint-lab/blob/main/notebooks/03_contradiction_pipeline.ipynb  
+
+---
+
+## Pipeline
 
 ```text
 two-time decay
 → Carleman weight
 → Hardy-type inequality
-→ AB-NOW alignment
 → contradiction
 → zero solution
 ```
 
-No new mathematics is claimed here. The goal is to preserve the standard proof structure while making the pipeline easier to inspect, reproduce, and eventually write up as an arXiv5867-ready paper.
+This repo turns an after-seminar bridge into a reproducible structure:
 
----
+- figures  
+- notebooks  
+- paper scaffold  
 
-## Repo structure
-
-```text
-unique-continuation-constraint-lab/
-  README.md
-  paper/
-    main.tex
-    references.bib
-    sections/
-      01_intro.tex
-      02_theorem_and_assumptions.tex
-      03_carleman_weights.tex
-      04_hardy_type_inequalities.tex
-      05_contradiction_chain.tex
-      06_cgcs_translation.tex
-  notebooks/
-    01_decay_weight_visualization.ipynb
-    02_hardy_gate_demo.ipynb
-    03_contradiction_pipeline.ipynb
-  src/
-    weights.py
-    hardy_demo.py
-    plotting.py
-  figures/
-    uc_pipeline_v3_standard_vs_now.png
-    step1_two_time_decay.png
-    step2_exponential_weight.png
-    step3_hardy_variation_cost.png
-    step4_ab_now_alignment.png
-  docs/
-    glossary.md
-    AB_NOW_alignment.md
-```
+No new mathematics is claimed. The goal is to preserve the standard proof structure while making the pipeline easier to inspect and reproduce.
 
 ---
 
 ## Core mathematical context
-
-Classical model:
 
 \[
 i\partial_t u = -\Delta u + V(x)u.
@@ -77,7 +58,7 @@ Two-time decay assumption:
 |u(x,t_1)|, |u(x,t_2)| \le C e^{-a|x|^2}.
 \]
 
-For sufficiently strong decay under the theorem hypotheses:
+Conclusion under standard hypotheses:
 
 \[
 u(x,t) \equiv 0.
@@ -85,26 +66,63 @@ u(x,t) \equiv 0.
 
 ---
 
+## Figures
+
+Representative steps:
+
+- Step 1 — two-time decay  
+- Step 2 — exponential / Carleman weighting  
+- Step 3 — Hardy variation cost  
+- Step 4 — contradiction alignment  
+- Step 5 — zero solution  
+
+(see `/figures/`)
+
+---
+
+## Repo structure
+
+```
+unique-continuation-constraint-lab/
+  paper/
+  notebooks/
+  src/
+  figures/
+  docs/
+```
+
+---
+
+## Docs
+
+- 📘 Glossary  
+  docs/glossary.md  
+
+- 🔄 AB ↔ NOW alignment  
+  docs/AB_NOW_alignment.md  
+
+---
+
 ## Language note
 
-This repo uses a light CGCS translation layer:
+This repo includes a minimal CGCS translation layer:
 
-- **expand**: initial spread of structure
-- **extend (step)**: continue one step across the pipeline
-- **resist (collapse)**: survive constraint pressure without contradiction
+- **expand**: initial spread of structure  
+- **extend (step)**: continue one step  
+- **resist (collapse)**: survive constraint pressure  
 
-These are interpretive aids. Standard PDE language remains primary.
+These are interpretive aids only. Standard PDE language remains primary.
 
 ---
 
 ## Current status
 
-- [x] after-seminar bridge page
-- [x] Notebook 02 proof-aligned pipeline
-- [x] figure set planned
-- [ ] dedicated notebooks split by step
-- [ ] full paper draft
-- [ ] references filled from standard sources
+- [x] web bridge note  
+- [x] notebook pipeline (01–03)  
+- [x] figure set  
+- [x] paper draft (PDF)  
+- [ ] arXiv-ready version  
+- [ ] expanded references  
 
 ---
 
