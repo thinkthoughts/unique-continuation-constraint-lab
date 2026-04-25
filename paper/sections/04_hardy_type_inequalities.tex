@@ -1,18 +1,10 @@
 \section{Hardy-type inequalities}
 
-Hardy-type inequalities constrain how concentrated a function can be relative to its variation.
-
-A model inequality is
+A model inequality:
 \[
-\int_{\mathbb{R}^n} \frac{|u(x)|^2}{|x|^2}\,dx
-\le C \int_{\mathbb{R}^n} |\nabla u(x)|^2\,dx.
+\int \frac{|u|^2}{|x|^2} \le C \int |\nabla u|^2.
 \]
 
-In the pipeline, such inequalities enforce that strong spatial concentration requires a corresponding variation cost.
-
-\medskip
-
-\noindent
 \textbf{Interpretation.}
 Concentration must pay variation cost.
 
@@ -20,17 +12,6 @@ Concentration must pay variation cost.
 \centering
 \includegraphics[width=\linewidth]{figures/step3_hardy_variation_cost_code.png}
 \caption{
-Step 3. Hardy-type variation cost: concentration must pay variation cost.
-Highly localized non-zero profiles incur increased gradient cost.
+Step 3. Hardy variation cost: concentration must pay variation cost.
 }
 \end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\linewidth]{figures/notebook02_hardy_width_sweep_code.png}
-\caption{
-Hardy intuition sweep: as spatial width decreases, concentration and variation pressure increase together.
-}
-\end{figure}
-
-This prevents a non-zero solution from remaining highly localized without violating derivative bounds.
