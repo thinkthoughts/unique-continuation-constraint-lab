@@ -14,8 +14,23 @@ In the pipeline, such inequalities enforce that strong spatial concentration req
 
 \noindent
 \textbf{Interpretation.}
-Concentration must pay variation cost; otherwise, constraints are violated.
+Concentration must pay variation cost.
 
-\medskip
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{figures/step3_hardy_variation_cost_code.png}
+\caption{
+Step 3. Hardy-type variation cost: concentration must pay variation cost.
+Highly localized non-zero profiles incur increased gradient cost.
+}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{figures/notebook02_hardy_width_sweep_code.png}
+\caption{
+Hardy intuition sweep: as spatial width decreases, concentration and variation pressure increase together.
+}
+\end{figure}
 
 This prevents a non-zero solution from remaining highly localized without violating derivative bounds.
