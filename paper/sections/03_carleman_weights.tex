@@ -1,6 +1,6 @@
 \section{Carleman weights}
 
-Carleman estimates introduce exponential weights that convert pointwise decay into global constraints.
+Carleman estimates introduce exponential weights that convert local decay into global constraints.
 
 A typical transformation has the form
 \[
@@ -8,9 +8,24 @@ v(x,t) = e^{\phi(x,t)} u(x,t),
 \]
 where \(\phi\) is a suitable weight function.
 
-Carleman inequalities then yield estimates of the type
+These estimates yield bounds of the form
 \[
 \| e^{\phi} u \| \le C \| e^{\phi} (i\partial_t + \Delta - V) u \|.
 \]
 
-In the context of unique continuation, this step amplifies decay assumptions so that smallness must act under the constraints imposed by the equation.
+Conceptually, this step changes the scale of the problem: the same mathematical object is viewed under a weighted norm.
+
+\medskip
+
+\noindent
+\textbf{Interpretation.}
+Smallness must act under the constraints imposed by the equation.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{figures/step2_exponential_weight_code.png}
+\caption{
+Step 2. Exponential (Carleman) weighting: same math, new scale.
+The weighted profile makes two-time smallness act under the constraints.
+}
+\end{figure}
