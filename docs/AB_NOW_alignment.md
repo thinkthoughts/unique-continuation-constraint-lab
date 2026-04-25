@@ -1,28 +1,30 @@
 # AB ↔ NOW Alignment
 
-This document maps standard PDE proof language ("AB") to the repo’s explanatory layer ("NOW / lift5").
+This document maps standard PDE proof language ("AB") to the explanatory layer used in this repo ("NOW / lift5").
 
-## Core pipeline
+## Constraint pipeline
 
-| Step | AB (standard) | NOW / lift5 |
-|------|---------------|------------|
-| two-time decay | Gaussian decay at t₁, t₂ | sister-diagonal constraint input |
-| Carleman weight | exponential weighted norm | same math · new scale |
-| Hardy inequality | ∫|u|²/|x|² ≤ C∫|∇u|² | concentration pays variation cost |
+| Step | AB (standard PDE) | NOW / lift5 |
+|------|------------------|-------------|
+| decay | Gaussian decay at two times | sister-diagonal constraint input |
+| weight | Carleman-weighted norm | same math · new scale |
+| variation | Hardy-type inequality | concentration pays variation cost |
 | contradiction | incompatible estimates | constraints cannot all hold simultaneously |
-| zero solution | u ≡ 0 | only the zero solution remains |
+| conclusion | u ≡ 0 | only the zero solution remains |
 
 ## Interpretation
 
-- AB = analytical structure (paper, literature)
-- NOW = explanatory layer (notebooks, figures)
-- Alignment means:
-  - no change to the mathematical content
-  - only a change in how structure is observed
+- **AB** = analytical structure (paper, literature)
+- **NOW** = computational / visual layer (notebooks, figures)
+
+Alignment means:
+- same mathematical content
+- same logical order
+- different presentation (observable vs symbolic)
 
 ## Scope
 
 This mapping:
-- preserves the standard argument (see EKPV, Tao)
-- supports the figures and notebooks
+- follows classical arguments (e.g. EKPV, Tao)
+- supports the figure pipeline (Steps 1–5)
 - does not introduce new mathematical claims
