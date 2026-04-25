@@ -1,0 +1,64 @@
+\section{Reproducible notebooks and figures}
+
+This paper is accompanied by a set of computational notebooks that generate all figures.
+These notebooks are expository: they illustrate the structure of the proof pipeline but do not replace the formal estimates.
+
+\subsection{Notebook structure}
+
+\begin{itemize}
+\item \texttt{01\_decay\_weight\_visualization.ipynb}  
+Illustrates two-time decay and Carleman-style exponential weighting.
+
+\item \texttt{02\_hardy\_gate\_demo.ipynb}  
+Shows how concentration incurs variation cost via Hardy-type constraints.
+
+\item \texttt{03\_contradiction\_pipeline\_pde\_aligned.ipynb}  
+Combines weighted norms, variation cost, and curvature proxies to demonstrate the contradiction structure.
+\end{itemize}
+
+\subsection{Figure provenance}
+
+Each figure in the paper is generated directly from the notebooks:
+
+\begin{center}
+\begin{tabular}{ll}
+Figure & Source notebook \\
+Step 1 & Notebook 01 \\
+Step 2 & Notebook 01 \\
+Step 3 & Notebook 02 \\
+Step 4 & Notebook 03 \\
+Step 5 & Notebook 03 \\
+\end{tabular}
+\end{center}
+
+\subsection{Interpretation vs proof}
+
+The quantities computed in the notebooks (weighted norms, gradient costs, curvature proxies) are finite-grid analogues of terms appearing in the formal analysis.
+
+They are used to:
+
+\begin{itemize}
+\item visualize constraint interactions,
+\item illustrate incompatibility for non-zero candidates,
+\item support the logical structure of the contradiction argument.
+\end{itemize}
+
+They are not substitutes for the analytical estimates in \cite{EKPV2008, TaoPDE}.
+
+\subsection{Access}
+
+The notebooks and figures are available in the repository:
+
+\begin{center}
+\texttt{https://github.com/thinkthoughts/unique-continuation-constraint-lab}
+\end{center}
+
+\subsection{Summary}
+
+The appendix connects:
+
+\[
+\text{analysis} \leftrightarrow \text{computation} \leftrightarrow \text{visualization}.
+\]
+
+This alignment is intended to improve clarity without altering the underlying mathematics.
