@@ -1,18 +1,20 @@
 \section{CGCS translation layer}
 
-This section provides an interpretive layer for clarity. It does not introduce new mathematical claims.
-
 \begin{center}
 \begin{tabular}{lll}
-\textbf{Standard step} & \textbf{CGCS description} & \textbf{Function} \\
-two-time decay & paired constraint input & test solution twice \\
-Carleman weight & new scale & smallness acts under constraints \\
-Hardy inequality & variation cost & concentration requires cost \\
-contradiction & constraint mismatch & exclude non-zero solutions \\
-zero solution & remains under constraints & unique continuation result \\
+Standard step & Description & Function \\
+two-time decay & paired input & test solution twice \\
+Carleman weight & scale change & enforce constraints \\
+Hardy inequality & variation cost & limit concentration \\
+contradiction & mismatch & exclude non-zero \\
+zero solution & remains & final result \\
 \end{tabular}
 \end{center}
 
-\begin{remark}
-All mathematical statements in this paper follow standard results. The CGCS terminology is purely descriptive.
-\end{remark}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{figures/notebook03_pde_constraint_table_code.png}
+\caption{
+PDE-style constraint table: non-zero candidates generate positive costs, while the zero solution is the baseline.
+}
+\end{figure}
