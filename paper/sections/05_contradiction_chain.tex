@@ -1,34 +1,31 @@
-\section{CGCS translation layer}
+\section{Contradiction chain}
 
-This section provides an interpretive layer for clarity. It does not introduce new mathematical claims.
+We combine:
 
-\begin{center}
-\begin{tabular}{lll}
-\textbf{Standard step} & \textbf{CGCS description} & \textbf{Function} \\
-two-time decay & paired constraint input & test solution twice \\
-Carleman weight & new scale & smallness acts under constraints \\
-Hardy inequality & variation cost & concentration pays cost \\
-contradiction & constraint mismatch & exclude non-zero solutions \\
-zero solution & remains under constraints & unique continuation result \\
-\end{tabular}
-\end{center}
+\begin{itemize}
+\item two-time decay,
+\item Carleman-weighted norms,
+\item Hardy variation cost,
+\item PDE curvature constraints.
+\end{itemize}
+
+Non-zero candidates generate positive weighted, variation, and curvature costs.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{figures/notebook01_ab_now_alignment_code.png}
+\includegraphics[width=\linewidth]{figures/step4_contradiction_pipeline_pde_code.png}
 \caption{
-Notebook 01 alignment check: decay and weighting remain aligned with the standard proof pipeline.
+Step 4. PDE-aligned contradiction: non-zero candidates generate incompatible constraint costs.
 }
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{figures/notebook02_hardy_alignment_code.png}
+\includegraphics[width=\linewidth]{figures/step5_zero_solution_pde_code.png}
 \caption{
-Notebook 02 alignment check: Hardy-type variation cost remains aligned with the standard proof pipeline.
+Step 5. Zero solution: only the zero solution satisfies all constraints.
 }
 \end{figure}
 
-\begin{remark}
-All mathematical statements in this paper follow standard results. The CGCS terminology is descriptive.
-\end{remark}
+\textbf{Conclusion.}
+Only the zero solution remains.
