@@ -8,7 +8,7 @@ Exponential weighting used to convert decay into global constraints.
 
 ## Hardy inequality
 A bound linking concentration to gradient cost:
-∫|u|²/|x|² ≤ C∫|∇u|²
+∫|u|²/|x|² ≤ C∫|∇u|².
 
 ## variation cost
 Finite-grid proxy for ∫|∇u|².
@@ -17,14 +17,14 @@ Finite-grid proxy for ∫|∇u|².
 Finite-grid proxy for ∫|Δu|².
 
 ## constraint pipeline
-The sequence:
-decay → weight → Hardy → contradiction → zero solution
+Sequence:
+decay → weight → variation → contradiction → zero solution.
 
 ## zero solution
-The only configuration satisfying all constraints simultaneously.
+The only solution satisfying all constraints simultaneously.
 
 ## finite-grid realization
-A numerical analogue of analytical quantities used for visualization.
+Numerical analogue of analytical quantities used for visualization.
 
 ## CGCS
-Internal alignment metric for clarity between AB and NOW layers.
+Internal alignment metric (Constraint-Gate Comprehension Score) measuring clarity between analytical and computational layers.
