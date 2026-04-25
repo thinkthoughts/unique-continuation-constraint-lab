@@ -1,0 +1,34 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{A Constraint-Pipeline Bridge for Unique Continuation in Schr\"odinger Equations}
+\author{Dan Hawkley}
+\date{\today}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note presents a constraint-based bridge for unique continuation arguments in Schr\"odinger equations.
+The standard proof structure is preserved: two-time decay, Carleman weights, Hardy-type inequalities, contradiction, and the zero solution.
+The contribution is expository: a reproducible pipeline for making the proof structure easier to inspect.
+\end{abstract}
+
+\input{sections/01_intro}
+\input{sections/02_theorem_and_assumptions}
+\input{sections/03_carleman_weights}
+\input{sections/04_hardy_type_inequalities}
+\input{sections/05_contradiction_chain}
+\input{sections/06_cgcs_translation}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
